@@ -76,3 +76,167 @@ p {
 section {
   padding: 4rem 1.5rem;
 }
+
+/* ===== Header / Nav (Flexbox) ===== */
+header {
+  position: sticky;
+  top: 0;
+  background-color: var(--surface-color);
+  border-bottom: 1px solid var(--border-color);
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: var(--text-color);
+}
+
+/* ===== Hero Section (Flexbox) ===== */
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 80vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+#hero .tagline {
+  color: var(--accent-color);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+#hero .subtext {
+  color: var(--text-muted);
+  max-width: 600px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: 600;
+  border-radius: 6px;
+  transition: opacity 0.2s ease;
+}
+
+.cta-button:hover {
+  opacity: 0.85;
+}
+
+/* ===== General Section Container ===== */
+#about,
+#skills,
+#projects,
+#contact {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== About Section ===== */
+#about p {
+  max-width: 700px;
+  color: var(--text-muted);
+}
+
+/* ===== Skills Section (Grid) ===== */
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skills-list li {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* ===== Projects Section (Grid) ===== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.project-card h3 {
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Contact Section (Flexbox) ===== */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.contact-list a {
+  color: var(--accent-color);
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
