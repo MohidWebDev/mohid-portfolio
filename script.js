@@ -59,3 +59,34 @@ window.addEventListener("scroll", () => {
     });
   }
 });
+
+// ===== Mobile Nav Toggle =====
+const navToggle = document.getElementById("navToggle");
+const navLinksList = document.getElementById("navLinks");
+
+navToggle.addEventListener("click", () => {
+  const isOpen = navLinksList.classList.toggle("show");
+  navToggle.setAttribute("aria-expanded", isOpen);
+  navToggle.innerHTML = isOpen
+    ? '<i class="fa-solid fa-xmark"></i>'
+    : '<i class="fa-solid fa-bars"></i>';
+});
+
+// Close dropdown when a nav link is clicked
+navLinksList.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinksList.classList.remove("show");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  });
+});
+
+// Close dropdown when clicking outside of it
+document.addEventListener("click", (event) => {
+  const isClickInsideNav = event.target.closest("nav");
+  if (!isClickInsideNav && navLinksList.classList.contains("show")) {
+    navLinksList.classList.remove("show");
+    navToggle.setAttribute("aria-expanded", "false");
+    navToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  }
+});
