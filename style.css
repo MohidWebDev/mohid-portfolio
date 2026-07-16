@@ -32,12 +32,28 @@ a {
 
 /* ===== Dark Mode Base Theme ===== */
 :root {
-  --bg-color: #0d1117;
-  --surface-color: #161b22;
-  --text-color: #e6edf3;
-  --text-muted: #8b949e;
-  --accent-color: #58a6ff;
-  --border-color: #30363d;
+  --bg-color: #0f0a1a;
+  --surface-color: #1a1225;
+  --text-color: #f1edf7;
+  --text-muted: #a599b5;
+  --border-color: #34293f;
+
+  /* Gradient accent colors */
+  --accent-1: #a855f7; /* purple */
+  --accent-2: #ec4899; /* magenta/pink */
+  --accent-3: #f97316; /* orange */
+
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--accent-1),
+    var(--accent-2),
+    var(--accent-3)
+  );
+  --gradient-subtle: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.15),
+    rgba(236, 72, 153, 0.15)
+  );
 
   --font-base: "Inter", "Segoe UI", system-ui, sans-serif;
 }
@@ -99,9 +115,12 @@ nav {
 }
 
 .logo {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.1rem;
-  color: var(--accent-color);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 nav ul {
@@ -116,7 +135,7 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li a:focus {
-  color: var(--text-color);
+  color: var(--accent-2);
 }
 
 /* ===== Hero Section (Flexbox) ===== */
@@ -132,9 +151,12 @@ nav ul li a:focus {
 }
 
 #hero .tagline {
-  color: var(--accent-color);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   font-size: 1.25rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 #hero .subtext {
@@ -146,15 +168,18 @@ nav ul li a:focus {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background-color: var(--accent-color);
+  background: var(--gradient-primary);
   color: var(--bg-color);
   font-weight: 600;
   border-radius: 6px;
-  transition: opacity 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .cta-button:hover {
-  opacity: 0.85;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
 }
 
 /* ===== General Section Container ===== */
@@ -207,11 +232,15 @@ nav ul li a:focus {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent-color);
+  border-image: var(--gradient-primary) 1;
+  border-color: var(--accent-2);
 }
 
 .project-card h3 {
-  color: var(--accent-color);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
   margin-bottom: 0.5rem;
 }
 
@@ -228,19 +257,20 @@ nav ul li a:focus {
 }
 
 .contact-list a {
-  color: var(--accent-color);
+  color: var(--accent-2);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-}
-
-.contact-list i {
-  color: var(--accent-color);
-  font-size: 1.1rem;
+  transition: color 0.2s ease;
 }
 
 .contact-list a:hover {
-  text-decoration: underline;
+  color: var(--accent-3);
+}
+
+.contact-list i {
+  color: var(--accent-1);
+  font-size: 1.1rem;
 }
 
 /* ===== Footer ===== */
@@ -326,7 +356,7 @@ footer {
 /* ===== Accessibility: Focus States ===== */
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--accent-color);
+  outline: 2px solid var(--accent-2);
   outline-offset: 3px;
 }
 
@@ -340,7 +370,7 @@ button:focus-visible {
   position: absolute;
   top: -50px;
   left: 0;
-  background-color: var(--accent-color);
+  background: var(--gradient-primary);
   color: var(--bg-color);
   padding: 0.75rem 1.5rem;
   font-weight: 600;
@@ -365,7 +395,7 @@ section h2::after {
   left: 0;
   width: 50px;
   height: 3px;
-  background-color: var(--accent-color);
+  background: var(--gradient-primary);
   border-radius: 2px;
 }
 
