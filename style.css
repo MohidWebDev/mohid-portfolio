@@ -311,3 +311,32 @@ footer {
     font-size: 0.8rem;
   }
 }
+
+/* ===== Accessibility: Focus States ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+.cta-button:focus-visible {
+  outline: 2px solid var(--text-color);
+  outline-offset: 3px;
+}
+
+/* ===== Accessibility: Skip Link ===== */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  z-index: 200;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
