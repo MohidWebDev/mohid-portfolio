@@ -94,6 +94,16 @@ p {
 /* ===== Base Section Spacing (temporary, refined later) ===== */
 section {
   padding: 4rem 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+section.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== Header / Nav (Flexbox) ===== */
@@ -586,4 +596,13 @@ section h2::after {
 .project-link:hover {
   gap: 0.75rem;
   color: var(--accent-3);
+}
+
+/* ===== Active Nav Link ===== */
+nav ul li a.active {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
 }
