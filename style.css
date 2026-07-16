@@ -226,6 +226,14 @@ nav ul li a:focus {
 
 .contact-list a {
   color: var(--accent-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-list i {
+  color: var(--accent-color);
+  font-size: 1.1rem;
 }
 
 .contact-list a:hover {
