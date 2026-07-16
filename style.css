@@ -175,6 +175,9 @@ nav ul li a:focus {
   border-radius: 50%;
   padding: 5px;
   background: var(--gradient-primary);
+  box-shadow:
+    0 0 40px rgba(168, 85, 247, 0.25),
+    0 0 70px rgba(236, 72, 153, 0.15);
 }
 
 .hero-image img {
@@ -269,8 +272,8 @@ nav ul li a:focus {
 
 .project-card:hover {
   transform: translateY(-4px);
-  border-image: var(--gradient-primary) 1;
   border-color: var(--accent-2);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15);
 }
 
 .project-card h3 {
@@ -298,11 +301,18 @@ nav ul li a:focus {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  transition: color 0.2s ease;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .contact-list a:hover {
   color: var(--accent-3);
+  background-color: var(--surface-color);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.15);
 }
 
 .contact-list i {
@@ -476,6 +486,7 @@ section h2::after {
 .service-card:hover {
   transform: translateY(-4px);
   border-color: var(--accent-2);
+  box-shadow: 0 8px 24px rgba(236, 72, 153, 0.15);
 }
 
 .service-icon {
