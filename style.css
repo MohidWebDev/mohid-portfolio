@@ -310,9 +310,9 @@ nav ul li a:focus {
 }
 
 .contact-list a:hover {
-  color: var(--accent-3);
+  color: var(--accent-2);
   background-color: var(--surface-color);
-  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.15);
+  box-shadow: 0 4px 16px #ec4899;
 }
 
 .contact-list i {
